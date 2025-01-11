@@ -1366,6 +1366,17 @@ toml = ["tomli (>=2.0.1)"]
 yaml = ["pyyaml (>=6.0.1)"]
 
 [[package]]
+name = "pyhcl"
+version = "0.4.5"
+description = "HCL configuration parser for python"
+optional = false
+python-versions = "*"
+files = [
+    {file = "pyhcl-0.4.5-py3-none-any.whl", hash = "sha256:30ee337d330d1f90c9f5ed8f49c468f66c8e6e43192bdc7c6ece1420beb3070c"},
+    {file = "pyhcl-0.4.5.tar.gz", hash = "sha256:c47293a51ccdd25e18bb5c8c0ab0ffe355b37c87f8d6f9d3280dc41efd4740bc"},
+]
+
+[[package]]
 name = "python-dotenv"
 version = "1.0.1"
 description = "Read key-value pairs from a .env file and set them as environment variables"
@@ -1759,4 +1770,4 @@ propcache = ">=0.2.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "824d94ae49daec12bceb6ef76424d89b52c7d7b80cb49623ecd498037e7e701f"
+content-hash = "1e8543a5b579ae8fd1cb65c6e99859e0383fa7d48a40c8a735fd31f0ab5436ab"

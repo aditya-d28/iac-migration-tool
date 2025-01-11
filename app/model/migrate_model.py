@@ -3,7 +3,7 @@ from pydantic import Field, model_validator
 from app.core.logger import get_logger
 from app.model.iac_migration_base_model import IacMigrationBaseModel
 
-logger = get_logger(__name__)
+logger = get_logger("system")
 
 class CloudService(str, Enum):
     AWS = "AWS"

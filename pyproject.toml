@@ -16,6 +16,7 @@ pydantic = "^2.10.5"
 pydantic-settings = "^2.7.1"
 colorlog = "^6.9.0"
 langchain-anthropic = "^0.3.1"
+pyhcl = "^0.4.5"
 
 
 [build-system]

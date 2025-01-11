@@ -1,14 +1,15 @@
-from langchain_anthropic import AnthropicLLM
+from langchain_anthropic import ChatAnthropic
 from app.core.config import settings
 from app.core.logger import get_logger
 
-logger = get_logger(__name__)
+logger = get_logger("system")
 
 
 class LLM:
     def __init__(self, llm_provider: str = settings.LLM_PROVIDER, **kwargs) -> None:
         if llm_provider == "ANTHROPIC":
-            self._model = AnthropicLLM(model = settings.LLM_MODEL_NAME, **kwargs)
+            self._model = ChatAnthropic(model = settings.LLM_MODEL_NAME,
+                                        **kwargs)
             logger.debug(f"{llm_provider}:{settings.LLM_MODEL_NAME} instanciated")
         elif llm_provider == "GOOGLE":
             pass

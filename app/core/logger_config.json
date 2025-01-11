@@ -42,7 +42,8 @@
     "loggers": {
         "": {
             "level": "DEBUG",
-            "handlers": ["console", "file"]
+            "handlers": ["console", "file"],
+            "propagate": true
         }
     }
 }
