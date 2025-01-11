@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "iac-migration"
+version = "0.1.0"
+description = ""
+authors = ["aditya-d28 <adiitkgp28@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+requests = "^2.32.3"
+fastapi = "^0.115.6"
+uvicorn = "^0.34.0"
+langchain = "^0.3.14"
+langchain-core = "^0.3.29"
+pydantic = "^2.10.5"
+pydantic-settings = "^2.7.1"
+colorlog = "^6.9.0"
+langchain-anthropic = "^0.3.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poe.tasks]
+format-check = "ruff format --check ."
+import-check = "ruff check --select \"I\" --select \"F401\" ."
+whitespace-check = "ruff check --select \"W291,W292,W293\" ."
+lint-check = "ruff check --ignore \"I,F401,W291,W292,W293\" ."
+type-check = "pyright ."
