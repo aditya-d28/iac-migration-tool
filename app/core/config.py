@@ -28,6 +28,10 @@ class Settings(BaseSettings):
     DEV_MODE: str
     LLM_PROVIDER: str
     LLM_MODEL_NAME: str
+    LLM_TEMPERATURE: float
+    LLM_MAX_RETRIES: int
+    TF_COMMUNITY_MODULES_PATH: str
+    OUTPUT_DIR: str
     ALLOWED_ORIGINS: Annotated[
         list[AnyUrl] | str, BeforeValidator(parse_cors)
     ] = []
