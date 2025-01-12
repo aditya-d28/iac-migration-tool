@@ -159,7 +159,7 @@ def get_relevant_modules_and_examples(dir_path:str, source_module: ResourceObjec
         chain = prompt | RunnableLambda(llm_model.invoke) | relevant_module_list_parser
         relevant_module_list = chain.invoke({"module_content": module_content})
         logger.info(f"Obtained relevant modules and examples for {source_module.resource}.")
-        output = f"## {source_module.resource} ```({source_module.module})``` <br>\n### List of relevant modules:<br>\n"
+        output = f"\n## {source_module.resource} ```({source_module.module})``` <br>\n### List of relevant modules:<br>\n"
         for item in  relevant_module_list.items:
             output = f"{output} - Module: {item.module_name}<br>\n   Path: {item.path}<br>\n"
         output = f"{output} <br>\n **Remarks:** {relevant_module_list.comments}<br>\n<br>\n"
@@ -193,7 +193,7 @@ def get_resource_mapping(dir_path:str, resources: ResourceList, source_cloud_ser
             chain = prompt | RunnableLambda(llm_model.invoke) | relevant_module_list_parser
             mapped_modules = chain.invoke({"source_module_content": source_module_content})
             logger.info(f"Obtained mapping for {source_module.resource}.")
-            output = "### Module Mapping:<br>\n"
+            output = "\n### Module Mapping:<br>\n"
             for item in  mapped_modules.items:
                 output = f"{output} - Module: {item.module_name}<br>\n   Path: {item.path}<br>\n"
             output = f"{output} <br>\n **Remarks:** {mapped_modules.comments}<br>\n<br>\n"
