@@ -162,7 +162,7 @@ def get_relevant_modules_and_examples(dir_path:str, source_module: ResourceObjec
         output = f"\n## {source_module.resource} ```({source_module.module})``` <br>\n### List of relevant modules:<br>\n"
         for item in  relevant_module_list.items:
             output = f"{output} - Module: {item.module_name}<br>\n   Path: {item.path}<br>\n"
-        output = f"{output} <br>\n **Remarks:** {relevant_module_list.comments}<br>\n<br>\n"
+        output = f"{output} <br>\n \n**Remarks:** {relevant_module_list.comments}<br>\n<br>\n"
         write_to_output(output, request_id)
         return relevant_module_list
     except Exception as err:
@@ -196,7 +196,7 @@ def get_resource_mapping(dir_path:str, resources: ResourceList, source_cloud_ser
             output = "\n### Module Mapping:<br>\n"
             for item in  mapped_modules.items:
                 output = f"{output} - Module: {item.module_name}<br>\n   Path: {item.path}<br>\n"
-            output = f"{output} <br>\n **Remarks:** {mapped_modules.comments}<br>\n<br>\n"
+            output = f"{output} <br>\n \n**Remarks:** {mapped_modules.comments}<br>\n<br>\n"
             write_to_output(output, request_id)
     except Exception as err:
         logger.error(f"Error while mapping a resource: {str(err)}")
